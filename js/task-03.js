@@ -12,14 +12,15 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
 // Отримуємо посилання на елемент ul.gallery
 const gallery = document.querySelector(".gallery");
 
-// Створюємо розмітку для галереї та вставляємо її в DOM
+// Створюємо розмітку для галереї та вставляємо її в DOM з зменшеними розмірами зображень
 const galleryHTML = images.map((image) => {
   return `
     <li class="gallery-item">
-      <img src="${image.url}" alt="${image.alt}" class="gallery-image">
+      <img src="${image.url}" alt="${image.alt}" class="gallery-image" style="max-width: 300px; height: auto;">
     </li>
   `;
 }).join("");
