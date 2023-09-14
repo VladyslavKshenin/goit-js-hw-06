@@ -35,4 +35,7 @@ function createBoxes() {
 // Функція для очищення колекції елементів
 function destroyBoxes() {
   boxesRef.innerHTML = '';
+  
+  // Очищаємо значення інпуту
+  inputRef.value = '';
 }
