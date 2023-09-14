@@ -12,3 +12,16 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+// Отримуємо посилання на елемент ul.gallery
+const gallery = document.querySelector(".gallery");
+
+// Створюємо розмітку для галереї та вставляємо її в DOM
+const galleryHTML = images.map((image) => {
+  return `
+    <li class="gallery-item">
+      <img src="${image.url}" alt="${image.alt}" class="gallery-image">
+    </li>
+  `;
+}).join("");
+
+gallery.insertAdjacentHTML("beforeend", galleryHTML);
