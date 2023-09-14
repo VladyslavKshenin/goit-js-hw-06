@@ -1,7 +1,7 @@
 const categoriesList = document.querySelector("#categories");
 
 // Отримуємо всі елементи li.item в списку категорій
-const categoryItems = categoriesList.querySelectorAll("li.item");
+const categoryItems = Array.from(categoriesList.children);
 
 // Виводимо кількість категорій в консоль
 console.log(`Number of categories: ${categoryItems.length}`);
@@ -9,8 +9,8 @@ console.log(`Number of categories: ${categoryItems.length}`);
 // Перебираємо кожен елемент li.item
 categoryItems.forEach((item) => {
   // Отримуємо текст заголовку (тег <h2>) і кількість елементів (теги <li>) в категорії
-  const categoryName = item.querySelector("h2").textContent;
-  const categoryElements = item.querySelectorAll("li").length;
+  const categoryName = item.firstElementChild.textContent;
+  const categoryElements = item.lastElementChild.children.length;
   
   // Виводимо інформацію про категорію в консоль
   console.log(`Category: ${categoryName}`);
